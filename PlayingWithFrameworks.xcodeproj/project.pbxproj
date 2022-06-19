@@ -17,6 +17,7 @@
 		6B04C0C4285F3EE800B53504 /* PlayingWithFrameworksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B04C0C3285F3EE800B53504 /* PlayingWithFrameworksUITests.swift */; };
 		6B04C0C6285F3EE800B53504 /* PlayingWithFrameworksUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B04C0C5285F3EE800B53504 /* PlayingWithFrameworksUITestsLaunchTests.swift */; };
 		6B04C0D5285F3F5F00B53504 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B04C0D4285F3F5F00B53504 /* ListViewController.swift */; };
+		6B04C0D8285F406700B53504 /* VC+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B04C0D7285F406700B53504 /* VC+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		6B04C0C3285F3EE800B53504 /* PlayingWithFrameworksUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingWithFrameworksUITests.swift; sourceTree = "<group>"; };
 		6B04C0C5285F3EE800B53504 /* PlayingWithFrameworksUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingWithFrameworksUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		6B04C0D4285F3F5F00B53504 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		6B04C0D7285F406700B53504 /* VC+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VC+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 		6B04C0D3285F3F4700B53504 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				6B04C0D7285F406700B53504 /* VC+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B04C0A7285F3EE600B53504 /* MenuViewController.swift in Sources */,
+				6B04C0D8285F406700B53504 /* VC+Extension.swift in Sources */,
 				6B04C0A3285F3EE600B53504 /* AppDelegate.swift in Sources */,
 				6B04C0D5285F3F5F00B53504 /* ListViewController.swift in Sources */,
 				6B04C0A5285F3EE600B53504 /* SceneDelegate.swift in Sources */,
