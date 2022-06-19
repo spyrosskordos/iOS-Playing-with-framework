@@ -18,6 +18,7 @@
 		6B04C0C6285F3EE800B53504 /* PlayingWithFrameworksUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B04C0C5285F3EE800B53504 /* PlayingWithFrameworksUITestsLaunchTests.swift */; };
 		6B04C0D5285F3F5F00B53504 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B04C0D4285F3F5F00B53504 /* ListViewController.swift */; };
 		6B04C0D8285F406700B53504 /* VC+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B04C0D7285F406700B53504 /* VC+Extension.swift */; };
+		6B04C0DA285F40B700B53504 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B04C0D9285F40B700B53504 /* MenuView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		6B04C0C5285F3EE800B53504 /* PlayingWithFrameworksUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingWithFrameworksUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		6B04C0D4285F3F5F00B53504 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		6B04C0D7285F406700B53504 /* VC+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VC+Extension.swift"; sourceTree = "<group>"; };
+		6B04C0D9285F40B700B53504 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				6B04C0A6285F3EE600B53504 /* MenuViewController.swift */,
+				6B04C0D9285F40B700B53504 /* MenuView.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B04C0A7285F3EE600B53504 /* MenuViewController.swift in Sources */,
+				6B04C0DA285F40B700B53504 /* MenuView.swift in Sources */,
 				6B04C0D8285F406700B53504 /* VC+Extension.swift in Sources */,
 				6B04C0A3285F3EE600B53504 /* AppDelegate.swift in Sources */,
 				6B04C0D5285F3F5F00B53504 /* ListViewController.swift in Sources */,
@@ -477,6 +481,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -505,6 +510,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
