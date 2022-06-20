@@ -107,6 +107,7 @@
 		6B04C0A1285F3EE600B53504 /* PlayingWithFrameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6B04C0DE285F63CF00B53504 /* Coordinator */,
 				6B04C0DB285F424800B53504 /* PWFStyles */,
 				6B04C0D2285F3F3E00B53504 /* Menu */,
 				6B04C0D6285F3F6800B53504 /* List */,
@@ -169,6 +170,13 @@
 				6B04C0DC285F426600B53504 /* PWFRadiusButtonStyle.swift */,
 			);
 			path = PWFStyles;
+			sourceTree = "<group>";
+		};
+		6B04C0DE285F63CF00B53504 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
