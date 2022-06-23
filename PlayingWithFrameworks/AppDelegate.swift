@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Menu
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var dependencies: Dependencies!
