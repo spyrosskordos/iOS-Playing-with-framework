@@ -25,9 +25,10 @@ protocol EnterListIDCoordinator {
 private final class EnterListIDCoordinatorImpl: Coordinator,EnterListIDCoordinator {
     
     private let dependencies: Dependencies
-   
+    private let presentingViewController: UIViewController
     fileprivate init(requirements: EnterListIDRequirements){
         self.dependencies = requirements.dependencies
+        self.presentingViewController = requirements.presentingViewController
     }
     
     func start() {
@@ -35,6 +36,7 @@ private final class EnterListIDCoordinatorImpl: Coordinator,EnterListIDCoordinat
         let viewController = EnterListIDViewController(viewModel: viewModel)
         viewController.modalPresentationStyle = .overFullScreen
         viewController.modalTransitionStyle = .crossDissolve
+        presentingViewController.present(viewController, animated: true)
     }
     
     func showList() {
