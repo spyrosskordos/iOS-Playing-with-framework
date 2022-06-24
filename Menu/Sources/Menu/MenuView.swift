@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
+import PWFCommon
 
 struct MenuView: View {
+  @ObservedObject  var viewModel: MenuViewModel
     var body: some View {
         NavigationView {
             VStack {
                 Button("List With Combine") {
+                    viewModel.listTapped()
                 }
                 .buttonStyle(PWFRadiusButtonStyle())
                 Spacer()
@@ -20,8 +23,3 @@ struct MenuView: View {
     }
 }
 
-struct MenuView_Previews: PreviewProvider {
-    static var previews: some View {
-        MenuView()
-    }
-}

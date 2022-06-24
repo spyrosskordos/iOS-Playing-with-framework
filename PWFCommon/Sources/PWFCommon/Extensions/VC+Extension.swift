@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import SwiftUI
 
-extension UIViewController {
+public extension UIViewController {
     func addSubSwiftUIView<Content>(_ swiftUIView: Content, to view: UIView) where Content: View {
 
         let hostingController = UIHostingController(rootView: swiftUIView)

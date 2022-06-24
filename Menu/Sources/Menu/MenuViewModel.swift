@@ -7,11 +7,15 @@
 
 import Foundation
 
-class MenuViewModel {
+class MenuViewModel: ObservableObject {
     
     private let coordinator: MenuCoordinator
     
     init(coordinator: MenuCoordinator){
         self.coordinator = coordinator
+    }
+    
+    func listTapped() {
+        coordinator.showPopup()
     }
 }

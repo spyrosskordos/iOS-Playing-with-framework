@@ -1,16 +1,16 @@
 //
-//  ViewController.swift
-//  PlayingWithFrameworks
+//  EnterListIDViewController.swift
+//  
 //
-//  Created by Sko on 19/6/22.
+//  Created by Sko on 23/6/22.
 //
 
 import UIKit
 import PWFCommon
+class EnterListIDViewController: UIViewController {
 
-class MenuViewController: UIViewController {
-    private var viewModel: MenuViewModel
-    init(viewModel: MenuViewModel) {
+    private var viewModel: EnterListIDViewModel
+    init(viewModel: EnterListIDViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -21,9 +21,7 @@ class MenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addSubSwiftUIView(MenuView(viewModel: viewModel), to: view)
+        addSubSwiftUIView(EnterListIDView(), to: view)
     }
     
-    
 }
-

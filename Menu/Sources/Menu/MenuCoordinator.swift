@@ -7,16 +7,26 @@
 
 import Foundation
 import UIKit
+import PWFCommon
 
 public struct MenuRequirements: Requirements {
+    
     let dependencies: Dependencies
+   
+    public init (dependencies: Dependencies) {
+        self.dependencies = dependencies
+    }
 }
 protocol MenuCoordinator {
     func showPopup()
 }
+
 private final class MenuCoordinatorImpl: Coordinator, MenuCoordinator {
     
     private let dependencies: Dependencies
+    private var presentingViewController: UIViewController? {
+        return dependencies.window.rootViewController
+    }
     
     fileprivate init(requirements: MenuRequirements) {
         self.dependencies = requirements.dependencies
@@ -30,13 +40,18 @@ private final class MenuCoordinatorImpl: Coordinator, MenuCoordinator {
     }
     
     func showPopup() {
+        guard let presentingViewController = self.presentingViewController else {
+            return
+        }
         
+        dependencies.coordinatorFactoryProvider.enterListIDCoordinator(presentingViewController: presentingViewController, dependencies: dependencies).start()
     }
     
 }
 
-struct MenuCoordinatorFactory: CoordinatorFactory {
-    func makeCoordinator(for requirements: MenuRequirements) -> Coordinator {
+public struct MenuCoordinatorFactory: CoordinatorFactory {
+    public init() { }
+    public func makeCoordinator(for requirements: MenuRequirements) -> Coordinator {
         return MenuCoordinatorImpl(requirements: requirements)
     }
 }

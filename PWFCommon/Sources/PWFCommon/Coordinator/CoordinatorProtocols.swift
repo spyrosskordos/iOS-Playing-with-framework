@@ -6,14 +6,20 @@
 //
 
 import Foundation
-protocol Coordinator {
+public protocol Coordinator {
     func start()
 }
-protocol Requirements {}
+public protocol Requirements {}
 
-protocol CoordinatorFactory {
+public protocol CoordinatorFactory {
     associatedtype R: Requirements
     
     init()
     func makeCoordinator(for requirements: R) -> Coordinator
+}
+
+extension CoordinatorFactory {
+    public init() {
+        self.init()
+    }
 }

@@ -7,8 +7,9 @@
 
 import SwiftUI
 
-struct PWFRadiusButtonStyle: ButtonStyle {
-    func makeBody(configuration: Configuration) -> some View {
+public struct PWFRadiusButtonStyle: ButtonStyle {
+    public init() {}
+    public func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .padding()
             .background(Color(red: 0, green: 0, blue: 0.5))

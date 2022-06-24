@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:PWFCommon">
+   </FileRef>
+   <FileRef
+      location = "group:EnterListID">
+   </FileRef>
+   <FileRef
       location = "group:Menu">
    </FileRef>
    <FileRef
