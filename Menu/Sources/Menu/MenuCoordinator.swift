@@ -55,3 +55,9 @@ public struct MenuCoordinatorFactory: CoordinatorFactory {
         return MenuCoordinatorImpl(requirements: requirements)
     }
 }
+
+public struct MockMenuCoordinator: MenuCoordinator {
+    func showPopup() {
+        
+    }
+}

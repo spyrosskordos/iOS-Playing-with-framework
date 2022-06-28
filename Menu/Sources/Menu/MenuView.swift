@@ -23,3 +23,9 @@ struct MenuView: View {
     }
 }
 
+struct SwiftUIView_Previews: PreviewProvider {
+    static var previews: some View {
+        MenuView(viewModel: MenuViewModel(coordinator: MockMenuCoordinator()))
+    }
+}
+
