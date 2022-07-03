@@ -8,11 +8,11 @@
 import Combine
 import Foundation
 
-protocol APIClient {
+public protocol APIClient {
     func fetch<T>(endpoint: Endpoint, type: T.Type) -> AnyPublisher<T, Error> where T: Decodable
 }
 
-extension APIClient {
+public extension APIClient {
     func fetch<T>(endpoint: Endpoint, type: T.Type) -> AnyPublisher<T, Error> where T: Decodable {
         var urlRequest = URLRequest(url: endpoint.baseURL.appendingPathComponent(endpoint.path))
         urlRequest.httpMethod = endpoint.method.rawValue
