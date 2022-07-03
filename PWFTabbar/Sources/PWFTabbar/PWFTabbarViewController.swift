@@ -8,7 +8,16 @@
 import UIKit
 
 class PWFTabbarViewController: UITabBarController {
-
+    private var viewModel: PWFTabbarViewModel
+    init(viewModel: PWFTabbarViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("Not implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

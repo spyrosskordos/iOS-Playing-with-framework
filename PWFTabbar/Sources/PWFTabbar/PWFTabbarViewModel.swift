@@ -8,6 +8,9 @@
 import Foundation
 
 class PWFTabbarViewModel {
-    
+    let coordinator: PWFCoordinator
+    init(coordinator: PWFCoordinator) {
+        self.coordinator = coordinator
+    }
 }
 

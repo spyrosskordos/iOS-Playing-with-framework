@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Menu
 import PWFCommon
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = window
         self.dependencies = Dependencies(window: window,coordinatorFactoryProvider: PWFCoordinatorFactoryProvider())
         self.dependencies.coordinatorFactoryProvider
-            .menuCoordinator(dependencies: self.dependencies)
+            .pwfTabbarCoordinator(screens: [], dependencies: dependencies)
             .start()
         window.makeKeyAndVisible()
         
