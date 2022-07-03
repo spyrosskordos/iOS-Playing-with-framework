@@ -7,6 +7,7 @@
 
 import Foundation
 import PWFCommon
+import UIKit
 
 public struct PWFTabbarRequirements: Requirements {
 
@@ -23,7 +24,11 @@ protocol PWFCoordinator {
 
 private final class PWFTabbarCoordinatorImpl: Coordinator, PWFCoordinator {
 
-    let dependencies: Dependencies
+    private var tabbarVC: UITabBarController? {
+        return dependencies.window.rootViewController as? UITabBarController
+    }
+    
+    private let dependencies: Dependencies
 
     fileprivate init(requirements: PWFTabbarRequirements) {
         self.dependencies = requirements.dependencies
@@ -34,7 +39,7 @@ private final class PWFTabbarCoordinatorImpl: Coordinator, PWFCoordinator {
         let viewController = PWFTabbarViewController(viewModel: viewModel)
         dependencies.coordinatorFactoryProvider.availabilityListCoordinator(tabbar: viewController, dependencies: dependencies).start()
         dependencies.window.rootViewController = viewController
-       
+
     }
 }
 

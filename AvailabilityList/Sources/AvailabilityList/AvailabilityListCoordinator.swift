@@ -37,6 +37,7 @@ private final class AvailabilityListCoordinatorImpl: Coordinator, AvailabilityLi
     func start() {
         let viewModel = AvailabilityListViewModel()
         let viewController = AvailabilityListViewController(viewModel: viewModel)
+        viewController.tabBarItem = UITabBarItem(title: "List", image: .checkmark, selectedImage: .checkmark)
         tabbar.append(viewController: viewController)
     }
 

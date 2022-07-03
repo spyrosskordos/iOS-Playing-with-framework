@@ -9,9 +9,9 @@ import UIKit
 import PWFCommon
 
 class PWFTabbarViewController: UITabBarController, PWFTabbar {
-    
+
     private var viewModel: PWFTabbarViewModel
-    
+
     init(viewModel: PWFTabbarViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -28,6 +28,8 @@ class PWFTabbarViewController: UITabBarController, PWFTabbar {
     }
     
     func append(viewController: UIViewController) {
-        viewControllers?.append(viewController)
+        var vcs = viewControllers ?? []
+        vcs.append(viewController)
+        viewControllers = vcs
     }
 }
