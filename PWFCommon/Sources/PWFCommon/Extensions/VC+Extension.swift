@@ -13,7 +13,7 @@ public extension UIViewController {
     func addSubSwiftUIView<Content>(_ swiftUIView: Content, to view: UIView) where Content: View {
 
         let hostingController = UIHostingController(rootView: swiftUIView)
-
+        hostingController.view.backgroundColor = .clear
         addChild(hostingController)
 
         view.addSubview(hostingController.view)
