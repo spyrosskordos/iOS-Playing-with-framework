@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = window
         self.dependencies = Dependencies(window: window, coordinatorFactoryProvider: PWFCoordinatorFactoryProvider())
         self.dependencies.coordinatorFactoryProvider
-            .pwfTabbarCoordinator(screens: [], dependencies: dependencies)
+            .pwfTabbarCoordinator(dependencies: dependencies)
             .start()
         window.makeKeyAndVisible()
 

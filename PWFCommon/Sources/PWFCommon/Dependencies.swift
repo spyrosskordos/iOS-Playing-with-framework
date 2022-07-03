@@ -12,7 +12,8 @@ public protocol CoordinatorFactoryProvider {
         for requirements: Factory.R
     ) -> Factory
     func menuCoordinator(dependencies: Dependencies) -> Coordinator
-    func pwfTabbarCoordinator(screens: [PWFTabbarScreen],dependencies: Dependencies) -> Coordinator
+    func pwfTabbarCoordinator(dependencies: Dependencies) -> Coordinator
+    func availabilityListCoordinator(tabbar: PWFTabbar,dependencies: Dependencies) -> Coordinator
     func enterListIDCoordinator(presentingViewController: UIViewController, dependencies: Dependencies) -> Coordinator
 }
 

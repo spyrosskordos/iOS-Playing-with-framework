@@ -8,6 +8,6 @@
 import Foundation
 import UIKit
 
-public protocol PWFTabbarScreen where Self: UIViewController {
-    
+public protocol PWFTabbar  {
+    func append(viewController: UIViewController)
 }

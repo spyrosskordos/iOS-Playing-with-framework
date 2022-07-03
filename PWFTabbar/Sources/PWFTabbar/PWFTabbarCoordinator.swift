@@ -10,11 +10,9 @@ import PWFCommon
 
 public struct PWFTabbarRequirements: Requirements {
 
-    let screens: [PWFTabbarScreen]
     let dependencies: Dependencies
 
-    public init(screens: [PWFTabbarScreen], dependencies: Dependencies) {
-        self.screens = screens
+    public init(dependencies: Dependencies) {
         self.dependencies = dependencies
     }
 }
@@ -26,17 +24,17 @@ protocol PWFCoordinator {
 private final class PWFTabbarCoordinatorImpl: Coordinator, PWFCoordinator {
 
     let dependencies: Dependencies
-    let screens: [PWFTabbarScreen]
 
     fileprivate init(requirements: PWFTabbarRequirements) {
         self.dependencies = requirements.dependencies
-        self.screens = requirements.screens
     }
 
     func start() {
         let viewModel = PWFTabbarViewModel(coordinator: self)
         let viewController = PWFTabbarViewController(viewModel: viewModel)
+        dependencies.coordinatorFactoryProvider.availabilityListCoordinator(tabbar: viewController, dependencies: dependencies).start()
         dependencies.window.rootViewController = viewController
+       
     }
 }
 
