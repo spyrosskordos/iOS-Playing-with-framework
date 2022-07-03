@@ -24,7 +24,6 @@ class PWFTabbarViewController: UITabBarController, PWFTabbar {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
     
     func append(viewController: UIViewController) {

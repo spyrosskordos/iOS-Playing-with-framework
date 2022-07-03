@@ -23,10 +23,6 @@ protocol PWFCoordinator {
 }
 
 private final class PWFTabbarCoordinatorImpl: Coordinator, PWFCoordinator {
-
-    private var tabbarVC: UITabBarController? {
-        return dependencies.window.rootViewController as? UITabBarController
-    }
     
     private let dependencies: Dependencies
 
