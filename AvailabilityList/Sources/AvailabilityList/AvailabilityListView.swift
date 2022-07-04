@@ -12,13 +12,15 @@ struct AvailabilityListView: View {
     var body: some View {
         ZStack {
             Color.red
+        }.onAppear {
+            viewModel.fetchAllAvailableItems()
         }
 
     }
 }
 
-struct AvailabilityListView_Previews: PreviewProvider {
-    static var previews: some View {
-        AvailabilityListView(viewModel: AvailabilityListViewModel())
-    }
-}
+//struct AvailabilityListView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        AvailabilityListView(viewModel: AvailabilityListViewModel())
+//    }
+//}

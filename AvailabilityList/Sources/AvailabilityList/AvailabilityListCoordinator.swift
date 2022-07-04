@@ -24,7 +24,7 @@ protocol AvailabilityListCoordinator {
 
 }
 
-private final class AvailabilityListCoordinatorImpl: Coordinator, AvailabilityListCoordinator {
+internal final class AvailabilityListCoordinatorImpl: Coordinator, AvailabilityListCoordinator {
 
     let dependencies: Dependencies
     let tabbar: PWFTabbar
@@ -35,12 +35,12 @@ private final class AvailabilityListCoordinatorImpl: Coordinator, AvailabilityLi
     }
 
     func start() {
-        let viewModel = AvailabilityListViewModel()
+        let viewModel = AvailabilityListViewModel(coordinator: self, apiService: StreamingAvailabilityAPIService())
         let viewController = AvailabilityListViewController(viewModel: viewModel)
         let nvc = UINavigationController(rootViewController: viewController)
         nvc.tabBarItem = UITabBarItem(title: "List", image: .checkmark, selectedImage: .checkmark)
 
-        tabbar.append(viewController: viewController)
+        tabbar.append(viewController: nvc)
     }
 
 }

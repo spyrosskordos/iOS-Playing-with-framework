@@ -27,7 +27,7 @@ extension StreamingAvailabilityEndpoint: Endpoint {
     var path: String {
         switch self {
         case .fetchAllAvailableItems(let type, let country, let service, let page):
-            return Constants.searchEndpoint + "country=\(country)&service=\(service)&type=\(type)&page=\(page)"
+            return Constants.searchEndpoint + "country=\(country)&service=\(service)&type=\(type)&page=\(page)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         }
     }
 
@@ -41,7 +41,7 @@ extension StreamingAvailabilityEndpoint: Endpoint {
     var headers: [String: String]? {
         switch self {
         case .fetchAllAvailableItems:
-            return ["b1fdefff1cmsh45a9af340dbe7ddp1ac0abjsn80c99b5ee0d0": Constants.apiKey]
+            return ["X-RapidAPI-Key": Constants.apiKey]
         }
     }
 }
