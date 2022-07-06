@@ -12,17 +12,42 @@ struct TT: Identifiable, Hashable {
 
 }
 struct AvailabilityListView: View {
+    
     @StateObject var viewModel: AvailabilityListViewModel
+    
     var body: some View {
         ZStack {
-            List(viewModel.availableItems) { availableItem in
-                Text(availableItem.title).foregroundColor(.red)
+            List($viewModel.availableItems) { availableItem in
+                AvailabilityListRow(item: availableItem)
+                    .listRowBackground(Color.pink)
+
             }
+
         }
     }
 
 }
 
+struct AvailabilityListRow: View {
+    @Binding var item: StreamingAvailabilityItem
+
+    var body: some View {
+        HStack {
+            AsyncImage(url: URL(string: item.posterURLs.the92)) { image in
+                image
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .cornerRadius(10.0)
+                    .padding(.all, 5)
+            } placeholder: {
+                ProgressView()
+            }
+            .frame(height: 90)
+            Text(item.title)
+        }
+    }
+
+}
 struct AvailabilityListView_Previews: PreviewProvider {
     static var previews: some View {
         AvailabilityListView(
