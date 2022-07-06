@@ -22,7 +22,7 @@ class AvailabilityListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.addSubSwiftUIView(AvailabilityListView(viewModel: viewModel), to: view)
+        self.addSubSwiftUIView(AvailabilityListView(viewModel: self.viewModel), to: view)
 
     }
 

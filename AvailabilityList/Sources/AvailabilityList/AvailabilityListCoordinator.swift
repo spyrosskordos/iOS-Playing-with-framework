@@ -52,3 +52,11 @@ public struct AvailabilityListCoordinatorFactory: CoordinatorFactory {
 
     }
 }
+
+class MockAvailabilityListCoordinatorImpl: Coordinator, AvailabilityListCoordinator {
+    func start() {
+        
+    }
+    
+    
+}

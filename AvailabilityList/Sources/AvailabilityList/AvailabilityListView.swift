@@ -7,20 +7,27 @@
 
 import SwiftUI
 
+struct TT: Identifiable, Hashable {
+    let id = UUID()
+
+}
 struct AvailabilityListView: View {
-    let viewModel: AvailabilityListViewModel
+    @StateObject var viewModel: AvailabilityListViewModel
     var body: some View {
         ZStack {
-            Color.red
-        }.onAppear {
-            viewModel.fetchAllAvailableItems()
+            List(viewModel.availableItems) { availableItem in
+                Text(availableItem.title).foregroundColor(.red)
+            }
         }
-
     }
+
 }
 
-//struct AvailabilityListView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        AvailabilityListView(viewModel: AvailabilityListViewModel())
-//    }
-//}
+struct AvailabilityListView_Previews: PreviewProvider {
+    static var previews: some View {
+        AvailabilityListView(
+            viewModel: AvailabilityListViewModel(
+                coordinator: MockAvailabilityListCoordinatorImpl(),
+                apiService: StreamingAvailabilityAPIService()))
+    }
+}

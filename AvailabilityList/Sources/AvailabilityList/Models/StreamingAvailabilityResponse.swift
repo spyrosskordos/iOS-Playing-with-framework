@@ -1,6 +1,6 @@
 //
 //  File.swift
-//  
+//
 //
 //  Created by Sko on 3/7/22.
 //
@@ -19,22 +19,28 @@ struct StreamingAvailabilityResponse: Codable {
 }
 
 // MARK: - Result
-struct StreamingAvailabilityItem: Codable {
-    let imdbID, tmdbID: String
-    let imdbRating, imdbVoteCount, tmdbRating: Int
+struct StreamingAvailabilityItem: Identifiable, Codable {
+    let id: String
+    let imdbRating: Int
     let backdropPath: String
-    let backdropURLs: BackdropURLs
-    let originalTitle: String
-    let genres: [Int]
-    let countries: [String]
-    let year, runtime: Int
-    let cast, significants: [String]
-    let title, overview, tagline, video: String
-    let posterPath: String
+    let title: String
     let posterURLs: PosterURLs
-    let age: Int
     let streamingInfo: StreamingInfo
-    let originalLanguage: String
+
+    enum CodingKeys: String, CodingKey {
+        case id = "imdbID"
+        case imdbRating, backdropPath, title, posterURLs, streamingInfo
+    }
+
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(id, forKey: .id)
+        try container.encode(imdbRating, forKey: .imdbRating)
+        try container.encode(backdropPath, forKey: .backdropPath)
+        try container.encode(posterURLs, forKey: .posterURLs)
+        try container.encode(streamingInfo, forKey: .streamingInfo)
+        try container.encode(title, forKey: .title)
+        }
 }
 
 // MARK: - BackdropURLs
