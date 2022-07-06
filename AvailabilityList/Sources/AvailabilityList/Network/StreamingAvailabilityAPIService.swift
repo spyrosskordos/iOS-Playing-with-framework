@@ -12,8 +12,7 @@ struct StreamingAvailabilityAPIService: StreamingAvailabilityAPI {
 
     func fetchAllAvailableItems(type: String, country: String, service: String,page: String) -> AnyPublisher<StreamingAvailabilityResponse?, Error> {
         return fetch(
-            endpoint: StreamingAvailabilityEndpoint
-                .fetchAllAvailableItems(
+            endpoint: FetchAllAvailableItemsRequest(
                 type: type,
                 country: country,
                 service: service,

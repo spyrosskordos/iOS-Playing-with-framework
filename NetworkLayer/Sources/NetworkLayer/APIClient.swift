@@ -1,6 +1,6 @@
 //
 //  File.swift
-//  
+//
 //
 //  Created by Sko on 3/7/22.
 //
@@ -15,14 +15,15 @@ public protocol APIClient {
 public extension APIClient {
     func fetch<T>(endpoint: Endpoint, type: T.Type) -> AnyPublisher<T, Error> where T: Decodable {
         let url = endpoint.baseURL.appendingPathComponent(endpoint.path)
-        let urlComponent = URLComponents(string: <#T##String#>)
-        urlComponent?.queryItems?.append(<#T##Element#>)
-        var urlRequest = URLRequest(url: )
+        var urlComponent = URLComponents(url: url, resolvingAgainstBaseURL: false)
+        urlComponent?.queryItems = endpoint.params
+        var urlRequest = URLRequest(url: urlComponent!.url!)
         urlRequest.httpMethod = endpoint.method.rawValue
         endpoint.headers?.forEach {
             urlRequest.setValue($0.key, forHTTPHeaderField: $0.value)
+            urlRequest.setValue($0.value, forHTTPHeaderField: $0.key)
         }
-        urlReques
+        
         
       return  URLSession.shared.dataTaskPublisher(for: urlRequest)
                     .tryMap { data, response in

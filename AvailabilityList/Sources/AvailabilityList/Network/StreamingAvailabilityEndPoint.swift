@@ -8,40 +8,42 @@
 import Foundation
 import NetworkLayer
 
-enum StreamingAvailabilityEndpoint {
-    case fetchAllAvailableItems(type: String, country: String, service: String, page: String)
-
-    struct Constants {
-        static let baseUrl = "https://streaming-availability.p.rapidapi.com/"
-        static let apiKey = "b1fdefff1cmsh45a9af340dbe7ddp1ac0abjsn80c99b5ee0d0"
-        static let searchEndpoint = "search/basic?"
-    }
+struct Constants {
+    static let baseUrl = "https://streaming-availability.p.rapidapi.com/"
+    static let apiKey = "b1fdefff1cmsh45a9af340dbe7ddp1ac0abjsn80c99b5ee0d0"
 }
+struct FetchAllAvailableItemsRequest: Endpoint {
 
-extension StreamingAvailabilityEndpoint: Endpoint {
+    let type: String
+    let country: String
+    let service: String
+    let page: String
+
+    var params: [URLQueryItem] {
+        return [
+            URLQueryItem(name: "country", value: country),
+            URLQueryItem(name: "service", value: service),
+            URLQueryItem(name: "type", value: type),
+            URLQueryItem(name: "page", value: page),
+        ]
+    }
+
     var baseURL: URL {
-        guard let url = URL(string: Constants.baseUrl) else { fatalError("baseURL could not be configured.") }
+        guard let url = URL(string: Constants.baseUrl) else {
+            fatalError("baseURL could not be configured.")
+        }
         return url
     }
 
     var path: String {
-        switch self {
-        case .fetchAllAvailableItems(let type, let country, let service, let page):
-            return Constants.searchEndpoint + "country=\(country)&service=\(service)&type=\(type)&page=\(page)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-        }
+        "search/basic"
     }
 
     var method: HTTPRequestMethod {
-        switch self {
-        case .fetchAllAvailableItems:
-            return .get
-        }
+        .get
     }
 
     var headers: [String: String]? {
-        switch self {
-        case .fetchAllAvailableItems:
-            return ["X-RapidAPI-Key": Constants.apiKey]
-        }
+        return ["X-RapidAPI-Key": Constants.apiKey]
     }
 }
