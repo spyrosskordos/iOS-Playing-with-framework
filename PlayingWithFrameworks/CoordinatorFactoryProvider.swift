@@ -8,7 +8,6 @@
 import Foundation
 import PWFCommon
 import UIKit
-import EnterListID
 import PWFTabbar
 import AvailabilityList
 struct PWFCoordinatorFactoryProvider: CoordinatorFactoryProvider {
