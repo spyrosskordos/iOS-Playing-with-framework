@@ -17,8 +17,6 @@
 		6B460DAD2871963400DFF0EE /* PWFTabbar in Frameworks */ = {isa = PBXBuildFile; productRef = 6B460DAC2871963400DFF0EE /* PWFTabbar */; };
 		6B460DAF2871A3A700DFF0EE /* AvailabilityList in Frameworks */ = {isa = PBXBuildFile; productRef = 6B460DAE2871A3A700DFF0EE /* AvailabilityList */; };
 		6BCE227E2864E14600796422 /* CoordinatorFactoryProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCE227D2864E14600796422 /* CoordinatorFactoryProvider.swift */; };
-		6BE6622B2864FBA800E2769E /* Menu in Frameworks */ = {isa = PBXBuildFile; productRef = 6BE6622A2864FBA800E2769E /* Menu */; };
-		6BE6622D2865106200E2769E /* EnterListID in Frameworks */ = {isa = PBXBuildFile; productRef = 6BE6622C2865106200E2769E /* EnterListID */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,8 +57,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B460DAD2871963400DFF0EE /* PWFTabbar in Frameworks */,
-				6BE6622D2865106200E2769E /* EnterListID in Frameworks */,
-				6BE6622B2864FBA800E2769E /* Menu in Frameworks */,
 				6B460DAF2871A3A700DFF0EE /* AvailabilityList in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -165,8 +161,6 @@
 			);
 			name = PlayingWithFrameworks;
 			packageProductDependencies = (
-				6BE6622A2864FBA800E2769E /* Menu */,
-				6BE6622C2865106200E2769E /* EnterListID */,
 				6B460DAC2871963400DFF0EE /* PWFTabbar */,
 				6B460DAE2871A3A700DFF0EE /* AvailabilityList */,
 			);
@@ -631,14 +625,6 @@
 		6B460DAE2871A3A700DFF0EE /* AvailabilityList */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = AvailabilityList;
-		};
-		6BE6622A2864FBA800E2769E /* Menu */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Menu;
-		};
-		6BE6622C2865106200E2769E /* EnterListID */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = EnterListID;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
